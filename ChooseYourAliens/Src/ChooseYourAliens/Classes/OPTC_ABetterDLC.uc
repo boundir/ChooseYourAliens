@@ -9,6 +9,8 @@ static event OnPostTemplatesCreated()
 	local X2DataTemplate Template;
 	local X2CharacterTemplate CharacterTemplate;
 
+	`LOG("Choose Your Aliens: OPTC ABetter DLC");
+
 	CharacterMgr = class'X2CharacterTemplateManager'.static.GetCharacterTemplateManager();
 
 	CharacterMgr.GetTemplateNames(TemplateNames);
@@ -26,49 +28,49 @@ static event OnPostTemplatesCreated()
 				case 'AdventTitanM1':
 					if(!AllowTitan())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventTitanM2':
 					if(!AllowTitan())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventTitanM3':
 					if(!AllowTitan())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventSparkM1':
 					if(!AllowSpark())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventSparkM2':
 					if(!AllowSpark())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventSparkM3':
 					if(!AllowSpark())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventCryoPriestM2':
 					if(!AllowCryoPriest())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdventCryoPriestM3':
 					if(!AllowCryoPriest())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 			}

@@ -9,6 +9,8 @@ static event OnPostTemplatesCreated()
 	local X2DataTemplate Template;
 	local X2CharacterTemplate CharacterTemplate;
 
+	`LOG("Choose Your Aliens: OPTC ABetterADVENT Primes");
+
 	CharacterMgr = class'X2CharacterTemplateManager'.static.GetCharacterTemplateManager();
 
 	CharacterMgr.GetTemplateNames(TemplateNames);
@@ -26,79 +28,79 @@ static event OnPostTemplatesCreated()
 				case 'AndromedonM4':
 					if(!AllowAndromedonPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'ArchonM4':
 					if(!AllowArchonPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BerserkerM4':
 					if(!AllowBerserkerPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BerserkerFireM4':
 					if(!AllowBerserkerFirePrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'CodexM4':
 					if(!AllowCodexPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'GatekeeperM4':
 					if(!AllowGatekeeperPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'MutonM4':
 					if(!AllowMutonPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'SectoidTrooperM4':
 					if(!AllowSectoidSoldierPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'SectoidMindbenderM4':
 					if(!AllowSectoidMindbenderPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'SectoidPuppeteerM4':
 					if(!AllowSectoidPuppeteerPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'SpectreM4':
 					if(!AllowSpectrePrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'StealthSectopod':
 					if(!AllowSectopodPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'ViperM4':
 					if(!AllowViperPrime())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 			}

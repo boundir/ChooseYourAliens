@@ -9,6 +9,8 @@ static event OnPostTemplatesCreated()
 	local X2DataTemplate Template;
 	local X2CharacterTemplate CharacterTemplate;
 
+	`LOG("Choose Your Aliens: OPTC Bio Division");
+
 	CharacterMgr = class'X2CharacterTemplateManager'.static.GetCharacterTemplateManager();
 
 	CharacterMgr.GetTemplateNames(TemplateNames);
@@ -26,205 +28,205 @@ static event OnPostTemplatesCreated()
 				case 'AdvBioTrooperM1':
 					if(!AllowBioTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioTrooperM2':
 					if(!AllowBioTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioTrooperM3':
 					if(!AllowBioTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioTrooperFakeM1':
 					if(!AllowBioFaceless())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioTrooperFakeM2':
 					if(!AllowBioFaceless())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioTrooperFakeM3':
 					if(!AllowBioFaceless())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioAssaultTrooperM2':
 					if(!AllowBioAssaultTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioAssaultTrooperM3':
 					if(!AllowBioAssaultTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioAssaultTrooperM2B':
 					if(!AllowBioAssaultTrooperShield())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioAssaultTrooperM3B':
 					if(!AllowBioAssaultTrooperShield())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioRocketTrooperM2':
 					if(!AllowBioRocketTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioRocketTrooperM3':
 					if(!AllowBioRocketTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioCaptainM1':
 					if(!AllowBioCaptain())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioCaptainM2':
 					if(!AllowBioCaptain())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioCaptainM3':
 					if(!AllowBioCaptain())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioMEC':
 					if(!AllowBioMEC())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioMecTrooper':
 					if(!AllowBioMecTrooper())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM1A':
 					if(!AllowBioGeneralGasStrike())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM2A':
 					if(!AllowBioGeneralGasStrike())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM3A':
 					if(!AllowBioGeneralGasStrike())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM2B':
 					if(!AllowBioGeneralShotgun())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM3B':
 					if(!AllowBioGeneralShotgun())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM1C':
 					if(!AllowBioGeneralSMG())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM2C':
 					if(!AllowBioGeneralSMG())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM3C':
 					if(!AllowBioGeneralSMG())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM2D':
 					if(!AllowBioGeneralRocketLauncher())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'AdvBioGeneralM3D':
 					if(!AllowBioGeneralRocketLauncher())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioViperSilver':
 					if(!AllowBioViperSilver())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioViperGold':
 					if(!AllowBioViperGold())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioFaceless':
 					if(!AllowBioFaceless())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioFacelessM2':
 					if(!AllowBioFaceless())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioZerker':
 					if(!AllowBioZerker())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioLost':
 					if(!AllowBioLost())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 				case 'BioLostBleeder':
 					if(!AllowBioLostBleeder())
 					{
-						CharacterTemplate.SpawnRequirements.RequiredObjectives.AddItem('T5_M3_CompleteFinalMission');
+						CharacterTemplate.SpawnRequirements.RequiredTechs.AddItem('NullTech');
 					}
 					break;
 			}
