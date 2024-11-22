@@ -158,10 +158,10 @@ simulated function ClientModCallback(MCM_API_Instance ConfigAPI, int GameMode)
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Trooper", DISABLE_INFO, AllowBioTrooper, BioTrooperSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Assault Trooper", DISABLE_INFO, AllowBioAssaultTrooper, BioAssaultTrooperSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Assault Trooper Shield", DISABLE_INFO, AllowBioAssaultTrooperShield, BioAssaultTrooperShieldSaveHandler);
-		GroupBio.AddCheckbox('checkbox', "Enable Bio RocketTrooper", DISABLE_INFO, AllowBioRocketTrooper, BioRocketTrooperSaveHandler);
+		GroupBio.AddCheckbox('checkbox', "Enable Bio Rocket Trooper", DISABLE_INFO, AllowBioRocketTrooper, BioRocketTrooperSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Captain", DISABLE_INFO, AllowBioCaptain, BioCaptainSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio MEC", DISABLE_INFO, AllowBioMEC, BioMECSaveHandler);
-		GroupBio.AddCheckbox('checkbox', "Enable Bio MecTrooper", DISABLE_INFO, AllowBioMecTrooper, BioMecTrooperSaveHandler);
+		GroupBio.AddCheckbox('checkbox', "Enable Bio Mec Trooper", DISABLE_INFO, AllowBioMecTrooper, BioMecTrooperSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio General Gas Strike", DISABLE_INFO, AllowBioGeneralGasStrike, BioGeneralGasStrikeSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio General Shotgun", DISABLE_INFO, AllowBioGeneralShotgun, BioGeneralShotgunSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio General SMG", DISABLE_INFO, AllowBioGeneralSMG, BioGeneralSMGSaveHandler);
@@ -169,7 +169,7 @@ simulated function ClientModCallback(MCM_API_Instance ConfigAPI, int GameMode)
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Viper Silver", DISABLE_INFO, AllowBioViperSilver, BioViperSilverSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Viper Gold", DISABLE_INFO, AllowBioViperGold, BioViperGoldSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Faceless", DISABLE_INFO, AllowBioFaceless, BioFacelessSaveHandler);
-		GroupBio.AddCheckbox('checkbox', "Enable Bio Zerker", DISABLE_INFO, AllowBioZerker, BioZerkerSaveHandler);
+		GroupBio.AddCheckbox('checkbox', "Enable BioZerker", DISABLE_INFO, AllowBioZerker, BioZerkerSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Lost", DISABLE_INFO, AllowBioLost, BioLostSaveHandler);
 		GroupBio.AddCheckbox('checkbox', "Enable Bio Lost Bleeder", DISABLE_INFO, AllowBioLostBleeder, BioLostBleederSaveHandler);
 	
@@ -326,7 +326,6 @@ simulated function LoadSavedSettings()
 
 simulated function SaveButtonClicked(MCM_API_SettingsPage Page)
 {
-
 	local X2CharacterTemplateManager CharacterMgr;
 	local array<name> TemplateNames;
 	local name TemplateName;

@@ -1,6 +1,6 @@
-class MCM_Defaults_CYA extends Object config(MCM_Defaults);
+class MCM_Defaults_CYA extends Object config(ChooseYourAliens_Defaults);
 
-var config int VERSION;
+var config int Version;
 
 // ABetterADVENT Primes
 var config bool AllowAndromedonPrime;
