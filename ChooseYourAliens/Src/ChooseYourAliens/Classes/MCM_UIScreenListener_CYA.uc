@@ -95,7 +95,7 @@ simulated function ClientModCallback(MCM_API_Instance ConfigAPI, int GameMode)
 	
 	if (GameMode == eGameMode_MainMenu || GameMode == eGameMode_Strategy)
 	{
-		Page = ConfigAPI.NewSettingsPage("Choose Your Aliens");
+		Page = ConfigAPI.NewSettingsPage("Choose Your Aliens [DEPRECATED]");
 		Page.SetPageTitle("Choose Your Aliens");
 		Page.SetSaveHandler(SaveButtonClicked);
 	

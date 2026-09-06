@@ -8,82 +8,62 @@ tags= War of the Chosen, Alien, Gameplay, Config</Description>
     <SteamPublishID>0</SteamPublishID>
     <AssemblyName>ChooseYourAliens</AssemblyName>
     <RootNamespace>ChooseYourAliens</RootNamespace>
+    <ProjectGuid>{56f4d4b4-00d7-4e05-87e3-df7631d97bda}</ProjectGuid>
   </PropertyGroup>
+  <Import Project="$(BuildCommonRoot)XCOM2.targets" />
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="Config\2.0" />
+    <Folder Include="Config\Compatibility" />
+    <Folder Include="Config\Compatibility\ABetterADVENT" />
+    <Folder Include="Config\Compatibility\ABetterDLC" />
+    <Folder Include="Config\Compatibility\BioDivision" />
     <Folder Include="Localization\" />
     <Folder Include="Src\" />
     <Folder Include="Src\ChooseYourAliens\" />
     <Folder Include="Src\ChooseYourAliens\Classes\" />
     <Folder Include="Src\ModConfigMenuAPI" />
     <Folder Include="Src\ModConfigMenuAPI\Classes" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Config\XComChooseYourAliens_Defaults.ini">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ReadMe.txt" />
-    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\2.0\XComChooseYourAliens_Defaults.ini" />
+    <Content Include="Config\2.0\XComChooseYourAliens.ini" />
+    <Content Include="Config\Compatibility\ABetterADVENT\XComChooseYourAliens_Defaults.ini" />
+    <Content Include="Config\Compatibility\ABetterDLC\XComChooseYourAliens_Defaults.ini" />
+    <Content Include="Config\Compatibility\BioDivision\XComChooseYourAliens_Defaults.ini" />
+    <Content Include="Config\XComChooseYourAliens_Defaults.ini" />
+    <Content Include="Config\XComDisableAliens.ini" />
     <Content Include="Config\XComEditor.ini" />
     <Content Include="Config\XComEngine.ini" />
     <Content Include="Config\XComGame.ini" />
-    <Content Include="Config\XComDisableAliens.ini" />
-    <Content Include="Localization\XComGame.int" />
-    <Content Include="Src\ChooseYourAliens\Classes\CYA_StrategyElement_DummyTechs.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ChooseYourAliens\Classes\MCM_Defaults_CYA.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ChooseYourAliens\Classes\MCM_UIScreenListener_CYA.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ChooseYourAliens\Classes\OPTC_CharacterTemplate.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ChooseYourAliens\Classes\CYA_Helper_CharacterTemplate.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ChooseYourAliens\Classes\X2DownloadableContentInfo_ChooseYourAliens.uc" />
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Button.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Checkbox.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Dropdown.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Instance.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Label.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Setting.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_SettingsGroup.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_SettingsPage.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Slider.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Spinner.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\MCM_API_CfgHelpers.uci">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ModConfigMenuAPI\MCM_API_Includes.uci">
-      <SubType>Content</SubType>
-    </Content>
+    <Content Include="Localization\ChooseYourAliens.int" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="PublishedFileId.ID" />
+    <Content Include="ReadMe.txt" />
+    <Content Include="Src\ChooseYourAliens\Classes\CA_DataStructures.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\CYA_Helper_CharacterTemplate.uc.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\CYA_StrategyElement_DummyTechs.uc.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\MCM_Defaults_ChooseYourAliens.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\MCM_Defaults_CYA.uc.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\MCM_UIScreenListener_ChooseYourAliens.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\MCM_UIScreenListener_CYA.uc.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\OPTC_CharacterTemplate.uc.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\X2ChooseYourAliens_Helper.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\X2ChooseYourAliens.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\X2ChooseYourAliensTemplate.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\X2ChooseYourAliensTemplateManager.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\X2DLCInfo_ChooseYourAliens.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\X2StrategyElement_ChooseYourAliens.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Button.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Checkbox.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Dropdown.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Instance.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Label.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Setting.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_SettingsGroup.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_SettingsPage.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Slider.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API_Spinner.uc" />
+    <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API.uc" />
+    <Content Include="Src\ModConfigMenuAPI\MCM_API_CfgHelpers.uci" />
+    <Content Include="Src\ModConfigMenuAPI\MCM_API_Includes.uci" />
   </ItemGroup>
-  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
 </Project>
