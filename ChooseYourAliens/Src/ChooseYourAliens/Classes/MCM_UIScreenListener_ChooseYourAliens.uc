@@ -7,13 +7,10 @@ var config int CONFIG_VERSION;
 var config array<UnitToggle> UnitToggles;
 
 var config string SelectedTab;
-var config string SelectedCategory;
 
 var localized string ModTitle;
 var localized string DisableInfo;
-
-var localized string MenuPageTitle;
-var localized string MenuTitle;
+var localized string UnavailableInfo;
 
 event OnInit(UIScreen Screen)
 {
@@ -25,142 +22,93 @@ event OnInit(UIScreen Screen)
 
 simulated function ClientModCallback(MCM_API_Instance ConfigAPI, int GameMode)
 {
-	local array<name> TabNames;
-	local array<MCM_API_SettingsPage> Pages;
-	local UnitToggle Toggle;
 	local MCM_API_SettingsPage Page;
-	local MCM_API_SettingsGroup Group;
-	local int i, PageIndex;
-
-	`Log(`StaticLocation, , 'CATrace');
 
 	LoadSavedSettings();
 
 	if (GameMode != eGameMode_MainMenu && GameMode != eGameMode_Strategy)
 	{
-		Page = ConfigAPI.NewSettingsPage("Choose Your Aliens");
-		Page.SetPageTitle("Only available in Main Menu and Strategy Layer");
+		Page = ConfigAPI.NewSettingsPage(ModTitle);
+		Page.SetPageTitle(UnavailableInfo);
 		Page.ShowSettings();
 		return;
 	}
 
-	for (i = 0; i < UnitToggles.Length; ++i)
-	{
-		Toggle = UnitToggles[i];
+	ConfigAPI.NewCustomSettingsPage(ModTitle, OpenOptionsScreen);
+}
 
-		PageIndex = GetOrCreatePageIndex(Toggle.Tab, TabNames, Pages, ConfigAPI);
+simulated function OpenOptionsScreen(UIScreen ParentScreen, int PageID)
+{
+	local CYA_OptionsScreen Screen;
 
-		Group = Pages[PageIndex].GetGroupByName('Units');
+	Screen = ParentScreen.Spawn(class'CYA_OptionsScreen', ParentScreen);
 
-		if (Group == none)
-		{
-			Group = Pages[PageIndex].AddGroup('Units', "Units");
-		}
+	Screen.Listener = self;
 
-		Group.AddCheckbox(
-			name("unit_" $ string(Toggle.TemplateName)),
-			GetUnitDisplayName(Toggle.TemplateName),
-			DisableInfo,
-			Toggle.IsEnabled,
-			UnitToggleSaveHandler
-		);
-	}
-
-	for (i = 0; i < Pages.Length; ++i)
-	{
-		Pages[i].ShowSettings();
-	}
+	ParentScreen.Movie.Stack.Push(Screen, ParentScreen.Movie);
 }
 
 `MCM_CH_VersionChecker(class'MCM_Defaults_ChooseYourAliens'.default.Version, CONFIG_VERSION)
 
 simulated function LoadSavedSettings()
 {
+	local array<UnitToggle> DefaultToggles;
+	local UnitToggle DefaultToggle;
 	local int i;
+	local int DefaultIndex;
+
+	DefaultToggles = class'MCM_Defaults_ChooseYourAliens'.default.UnitToggles;
 
 	if (UnitToggles.Length == 0)
 	{
-		UnitToggles = class'MCM_Defaults_ChooseYourAliens'.default.UnitToggles;
+		UnitToggles = DefaultToggles;
 	}
 
 	for (i = 0; i < UnitToggles.Length; ++i)
 	{
+		DefaultIndex = FindToggleIndex(DefaultToggles, UnitToggles[i].TemplateName);
+
+		if (DefaultIndex == INDEX_NONE)
+		{
+			continue;
+		}
+
 		UnitToggles[i].IsEnabled = `MCM_CH_GetValue(
-			class'MCM_Defaults_ChooseYourAliens'.default.UnitToggles[i].IsEnabled,
+			DefaultToggles[DefaultIndex].IsEnabled,
 			UnitToggles[i].IsEnabled
 		);
 	}
-}
 
-simulated function UnitToggleSaveHandler(MCM_API_Setting Setting, bool bValue)
-{
-	local int i;
-	local name SettingId;
-
-	SettingId = Setting.GetName();
-
-	for (i = 0; i < UnitToggles.Length; ++i)
+	foreach DefaultToggles(DefaultToggle)
 	{
-		if (SettingId == name("unit_" $ string(UnitToggles[i].TemplateName)))
+		if (FindToggleIndex(UnitToggles, DefaultToggle.TemplateName) == INDEX_NONE)
 		{
-			UnitToggles[i].IsEnabled = bValue;
-			break;
+			UnitToggles.AddItem(DefaultToggle);
 		}
 	}
 }
 
-simulated function SaveButtonClicked(MCM_API_SettingsPage Page)
-{
-	local X2CharacterTemplateManager CharacterTemplateManager;
-	local array<name> TemplateNames;
-	local name TemplateName;
-	local X2CharacterTemplate CharacterTemplate;
-
-	`Log("Saving settings",, 'ChooseYourAliens');
-
-	self.CONFIG_VERSION = `MCM_CH_GetCompositeVersion();
-	self.SaveConfig();
-
-	CharacterTemplateManager = class'X2CharacterTemplateManager'.static.GetCharacterTemplateManager();
-	CharacterTemplateManager.GetTemplateNames(TemplateNames);
-
-	foreach TemplateNames(TemplateName)
-	{
-		CharacterTemplate = CharacterTemplateManager.FindCharacterTemplate(TemplateName);
-
-		if (CharacterTemplate != none)
-		{
-			class'X2ChooseYourAliens_Helper'.static.ApplyToggle(CharacterTemplate);
-		}
-	}
-}
-
-simulated function int GetOrCreatePageIndex(
-	name TabName,
-	out array<name> TabNames,
-	out array<MCM_API_SettingsPage> Pages,
-	MCM_API_Instance ConfigAPI
-)
+static function int FindToggleIndex(out array<UnitToggle> Toggles, name TemplateName)
 {
 	local int i;
-	local MCM_API_SettingsPage Page;
 
-	for (i = 0; i < TabNames.Length; ++i)
+	for (i = 0; i < Toggles.Length; ++i)
 	{
-		if (TabNames[i] == TabName)
+		if (Toggles[i].TemplateName == TemplateName)
 		{
 			return i;
 		}
 	}
 
-	Page = ConfigAPI.NewSettingsPage(GetTabLabel(TabName));
-	Page.SetPageTitle(GetTabShortName(TabName));
-	Page.SetSaveHandler(SaveButtonClicked);
+	return INDEX_NONE;
+}
 
-	TabNames.AddItem(TabName);
-	Pages.AddItem(Page);
+simulated function SaveSettings()
+{
+	self.CONFIG_VERSION = `MCM_CH_GetCompositeVersion();
+	self.SaveConfig();
 
-	return TabNames.Length - 1;
+	class'X2ChooseYourAliens_Helper'.static.ApplyAllToggles();
 }
 
 static function string GetTabShortName(name TabName)
@@ -186,12 +134,6 @@ static function string PrettyTabName(string TabName)
 
 	return TabName;
 }
-
-static function string GetTabLabel(name TabName)
-{
-	return default.ModTitle $ ": " $ GetTabShortName(TabName);
-}
-
 
 static function string GetUnitDisplayName(name TemplateName)
 {
