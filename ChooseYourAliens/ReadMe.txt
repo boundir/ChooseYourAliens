@@ -7,10 +7,10 @@ Choose Your Aliens lets you define which enemies you want to encounter in your c
 None. All Aliens are enabled by default, it is up to you to disable what you don't want.
 There are two methods to make your changes:
 [list]
-    [*]Using MCM this will support [url=steamcommunity.com/sharedfiles/filedetails/?id=1126623381]A Better ADVENT[/url], [url=steamcommunity.com/sharedfiles/filedetails/?id=1481840594]A Better DLC[/url] and [url=steamcommunity.com/sharedfiles/filedetails/?id=1731235406]Bio Division[/url] mods.
+    [*]Using MCM, you get one tab per supported alien pack: [url=steamcommunity.com/sharedfiles/filedetails/?id=1126623381]A Better ADVENT[/url], [url=steamcommunity.com/sharedfiles/filedetails/?id=1481840594]A Better DLC[/url], [url=steamcommunity.com/sharedfiles/filedetails/?id=1731235406]Bio Division[/url], Long War Alien Pack and A Harder War (Advanced Aliens, Absurd Aliens, Praetorians, Fanatics).
     [*]Using [u]XComDisableAliens.ini[/u], you will be able to disable any alien. To do so you will have to enter the in-game unit's name you want to disable.
     [code]
-    [ChooseYourAliens.OPTC_CharacterTemplate]
+    [ChooseYourAliens.X2ChooseYourAliens_Helper]
     ; Example:
     ;+DisableAlien=AdvTrooperM1
     [/code]

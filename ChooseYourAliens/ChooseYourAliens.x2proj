@@ -5,7 +5,7 @@
     <Name>ChooseYourAliens</Name>
     <Description>Choose Your Aliens lets you define which enemies you want to encounter in your campaign. Using alien packs you may not want to play with all of them.
 tags= War of the Chosen, Alien, Gameplay, Config</Description>
-    <SteamPublishID>0</SteamPublishID>
+    <SteamPublishID>1782917748</SteamPublishID>
     <AssemblyName>ChooseYourAliens</AssemblyName>
     <RootNamespace>ChooseYourAliens</RootNamespace>
     <ProjectGuid>{56f4d4b4-00d7-4e05-87e3-df7631d97bda}</ProjectGuid>
