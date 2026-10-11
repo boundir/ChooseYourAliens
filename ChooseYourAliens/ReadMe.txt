@@ -22,6 +22,7 @@ There are two methods to make your changes:
 You may have incomplete pods if you disabled too many aliens and the game can't find alternatives.
 This will also happen for Golden Path missions where aliens are set.
 Using MCM, disabled aliens will stop appearing but the game won't refresh the pods. You will have to restart the game for that.
+Sitreps can pick their enemies from their own lists and can ignore this mod restrictions. With the [url=steamcommunity.com/sharedfiles/filedetails/?id=1134256495]Community Highlander[/url] installed, those units are swapped for other enemies from the same sitrep list, or from the mission's usual enemies when that list has nothing left.
 
 [h1]Credits[/h1]
 Modding Community is always a big help. Thanks to Musashi and MrNice for their support and guby & cie for MCM.
