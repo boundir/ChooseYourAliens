@@ -13,7 +13,6 @@ tags= War of the Chosen, Alien, Gameplay, Config</Description>
   <Import Project="$(BuildCommonRoot)XCOM2.targets" />
   <ItemGroup>
     <Folder Include="Config\" />
-    <Folder Include="Config\2.0" />
     <Folder Include="Config\Compatibility" />
     <Folder Include="Config\Compatibility\ABetterADVENT" />
     <Folder Include="Config\Compatibility\ABetterDLC" />
@@ -29,8 +28,6 @@ tags= War of the Chosen, Alien, Gameplay, Config</Description>
     <Folder Include="Src\ChooseYourAliens\Classes\" />
     <Folder Include="Src\ModConfigMenuAPI" />
     <Folder Include="Src\ModConfigMenuAPI\Classes" />
-    <Content Include="Config\2.0\XComChooseYourAliens_Defaults.ini" />
-    <Content Include="Config\2.0\XComChooseYourAliens.ini" />
     <Content Include="Config\Compatibility\ABetterADVENT\XComChooseYourAliens_Defaults.ini" />
     <Content Include="Config\Compatibility\ABetterDLC\XComChooseYourAliens_Defaults.ini" />
     <Content Include="Config\Compatibility\BioDivision\XComChooseYourAliens_Defaults.ini" />
@@ -73,5 +70,8 @@ tags= War of the Chosen, Alien, Gameplay, Config</Description>
     <Content Include="Src\ModConfigMenuAPI\Classes\MCM_API.uc" />
     <Content Include="Src\ModConfigMenuAPI\MCM_API_CfgHelpers.uci" />
     <Content Include="Src\ModConfigMenuAPI\MCM_API_Includes.uci" />
+    <Content Include="Src\ChooseYourAliens\Classes\MCM_UIScreenListener_CYA.uc" />
+    <Content Include="Src\ChooseYourAliens\Classes\OPTC_CharacterTemplate.uc" />
+    <Content Include="Config\XComChooseYourAliens_Defaults.ini" />
   </ItemGroup>
 </Project>

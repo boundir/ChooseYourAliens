@@ -1,4 +1,4 @@
-class X2ChooseYourAliens extends X2DataSet config(ChooseYourAliens);
+class X2ChooseYourAliens extends X2DataSet config(ChooseYourAliens_Defaults);
 
 var config array<name> TabModName;
 

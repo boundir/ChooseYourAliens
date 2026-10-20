@@ -88,6 +88,40 @@ simulated function LoadSavedSettings()
 	}
 }
 
+static function MigrateLegacyFlags()
+{
+	local array<UnitToggle> Toggles;
+	local array<name> DisabledNames;
+	local name TemplateName;
+	local int Index;
+
+	`log("Legacy check: saved toggles" @ default.UnitToggles.Length @ "legacy version" @ class'MCM_UIScreenListener_CYA'.default.CONFIG_VERSION,, 'ChooseYourAliens');
+
+	if (default.UnitToggles.Length > 0 || !class'MCM_UIScreenListener_CYA'.static.HasLegacyFlags())
+	{
+		return;
+	}
+
+	Toggles = class'MCM_Defaults_ChooseYourAliens'.default.UnitToggles;
+	DisabledNames = class'MCM_UIScreenListener_CYA'.static.DisabledTemplateNames();
+
+	foreach DisabledNames(TemplateName)
+	{
+		Index = FindToggleIndex(Toggles, TemplateName);
+
+		if (Index != INDEX_NONE)
+		{
+			Toggles[Index].IsEnabled = false;
+		}
+	}
+
+	default.UnitToggles = Toggles;
+	default.CONFIG_VERSION = class'MCM_Defaults_ChooseYourAliens'.default.Version;
+	StaticSaveConfig();
+
+	`log("Carried" @ DisabledNames.Length @ "disabled units over from 1.x legacy flags",, 'ChooseYourAliens');
+}
+
 static function int FindToggleIndex(out array<UnitToggle> Toggles, name TemplateName)
 {
 	local int i;

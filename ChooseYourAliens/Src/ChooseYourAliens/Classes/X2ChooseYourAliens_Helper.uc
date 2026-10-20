@@ -2,6 +2,20 @@ class X2ChooseYourAliens_Helper extends Object config(DisableAliens);
 
 var config array<name> DisableAlien;
 
+static function MergeLegacyDisableAliens()
+{
+	local name TemplateName;
+
+	foreach class'OPTC_CharacterTemplate'.default.DisableAlien(TemplateName)
+	{
+		if (default.DisableAlien.Find(TemplateName) == INDEX_NONE)
+		{
+			default.DisableAlien.AddItem(TemplateName);
+			`log("Merged legacy DisableAlien" @ TemplateName,, 'ChooseYourAliens');
+		}
+	}
+}
+
 static function bool IsUnitEnabled(name TemplateName)
 {
 	local UnitToggle Toggle;
